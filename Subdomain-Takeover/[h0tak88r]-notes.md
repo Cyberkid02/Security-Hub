@@ -1,0 +1,3 @@
+- [ ]  **Using `Subjack` [ `subjack -w <Subdomain List> -o results.txt -ssl -c fingerprints.json` ]**
+- [ ]  **The next step is to see where this domain is pointing to so we can try to take it over.`dig <Domain Here>`**
+- [ ]  [https://0xpatrik.com/takeover-proofs/](https://0xpatrik.com/takeover-proofs/)  |    https://github.com/EdOverflow/can-i-take-over-xyz
