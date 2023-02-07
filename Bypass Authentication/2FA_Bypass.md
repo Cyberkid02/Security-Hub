@@ -1,18 +1,3 @@
-## Getting a 403 error?
-
-⇒ Try appending %2e after the first slash!
-
-```bash
-[host.com/path](http://host.com/path) => 403 FORBIDDEN
-[host.com/](http://host.com/path)%2e[/path](http://host.com/path) => 200 0K
-```
-
-## admin secret file bypass
-
-```bash
-Host: 127.0.0.1
-```
-
 # 2FA Bypass Techniques
 
 | Index | Technique |
