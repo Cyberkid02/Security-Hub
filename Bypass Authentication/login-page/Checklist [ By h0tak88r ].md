@@ -1,3 +1,4 @@
+# login page authentication bypass techniques
 - [ ]  **use burp intruder using [this-list](https://github.com/M8SZT8/Security-Hub/blob/main/Bypass%20Authentication/login-page/fuzzing-list%20%5BBy%20hacktricks%5D.md)**
 - [ ]  Check for **comments** inside the page (scroll down and to the right?)
 - [ ]  Check if you can **directly access the restricted pages**
