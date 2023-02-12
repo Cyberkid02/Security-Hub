@@ -1,0 +1,22 @@
+- [ ]  **use burp intruder using [this-list](https://github.com/M8SZT8/Security-Hub/blob/main/Bypass%20Authentication/login-page/fuzzing-list%20%5BBy%20hacktricks%5D.md)**
+- [ ]  Check for **comments** inside the page (scroll down and to the right?)
+- [ ]  Check if you can **directly access the restricted pages**
+- [ ]  Check to **not send the parameters** (do not send any or only 1)
+- [ ]  Check the **PHP comparisons error:** `user[]=a&pwd=b` , `user=a&pwd[]=b` , `user[]=a&pwd[]=b`
+- [ ]  **Change content type to json** and send json values (bool true included)
+    - If you get a response saying that POST is not supported you can try to send the **JSON in the body but with a GET request** with `Content-Type: application/json`
+- [ ]  Check nodejs potential parsing error (read **[this](https://flattsecurity.medium.com/finding-an-unseen-sql-injection-by-bypassing-escape-functions-in-mysqljs-mysql-90b27f6542b4)**): `password[password]=1`
+    - Nodejs will transform that payload to a query similar to the following one: `SELECT id, username, left(password, 8) AS snipped_password, email FROM accounts WHERE username='admin' AND`` ``**password=password=1**;` which makes the password bit to be always true.
+    - If you can send a JSON object you can send `"password":{"password": 1}` to bypass the login.
+    - Remember that to bypass this login you still need to **know and send a valid username**.
+    - **Adding `"stringifyObjects":true`** option when calling `mysql.createConnection` will eventually b**lock all unexpected behaviours when `Object` is passed** in the parameter.
+- [ ]  Check credentials:
+    - **[Default credentials](https://github.com/carlospolop/hacktricks/blob/master/generic-methodologies-and-resources/brute-force.md#default-credentials)** of the technology/platform used
+    - **Common combinations** (root, admin, password, name of the tech, default user with one of these passwords).
+    - Create a dictionary using **Cewl**, **add** the **default** username and password (if there is) and try to brute-force it using all the words as **usernames and password**
+    - **Brute-force** using a bigger **dictionary ([Brute force](https://github.com/carlospolop/hacktricks/blob/master/generic-methodologies-and-resources/brute-force.md#http-post-form))**
+- [ ]  **Try [SQL Injection authentication bypass](https://github.com/carlospolop/hacktricks/blob/master/pentesting-web/sql-injection/#authentication-bypass)**
+- [ ]  Try **[No SQL Injection authentication bypass](https://github.com/carlospolop/hacktricks/blob/master/pentesting-web/nosql-injection.md#basic-authentication-bypass)**
+- [ ]  Try **[XPath Injection authentication bypass](https://github.com/carlospolop/hacktricks/blob/master/pentesting-web/xpath-injection.md#authentication-bypass)**
+- [ ]  try **[LDAP Injection authentication bypass](https://github.com/carlospolop/hacktricks/blob/master/pentesting-web/ldap-injection.md#login-bypass)**
+- [ ]  Check **[Redirects](https://github.com/M8SZT8/Security-Hub/blob/main/Fuzzing%20Lists/open-redirect.txt)**
