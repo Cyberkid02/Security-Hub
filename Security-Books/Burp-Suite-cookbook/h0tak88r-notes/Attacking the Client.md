@@ -47,8 +47,8 @@ In this chapter, we will cover the following recipes:
     1. Navigate to OWASP 2013 | A1 – Injection (Other) | HTMLi Via Cookie Injection | Capture Data Page:
     2. Note how the page looks before the attack:
     
-    []()
-    
+![image](https://user-images.githubusercontent.com/108616378/219864020-6f4c1fcf-98f1-461b-83b0-16e3403ccb3b.png)
+
     3. Switch to the Burp Proxy Intercept tab, and turn Interceptor on with the button Intercept is on.
     4. While the request is paused, make note of the last cookie, `acgroupswitchpersist=nada:`
     5. While the request is paused, replace the value of the last cookie, with this HTML injection script:
