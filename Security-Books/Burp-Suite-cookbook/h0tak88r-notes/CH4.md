@@ -16,8 +16,8 @@ In this chapter, we will cover the following recipes:
     9. Click the **Start attack button** . A popup dialog box appears displaying the payloads defined, as well as the new
     column we added under the **`Grep – Match` section**. This pop-up window is the attack results table.
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/21f4f927-1054-41e6-acaa-bb64eed23ebb/Untitled.png)
-    
+![image](https://user-images.githubusercontent.com/108616378/219856808-93d54e25-cb5c-4c31-a766-c11ada1848a2.png)
+
     1. The attack results table shows each request with the given payload resulted
     in a status code of `200` and that two of the payloads, john and tom, did not produce the message The password is invalid within the responses. Instead, those two payloads returned a message of `**The user does not exist:**`
     2. The result of this attack results table provide a `**username enumeration vulnerability**` based upon the overly verbose error message `**The password is invalid**`, which confirms the user account exists on the system: This means we are able to confirm that accounts already exist in the system for the users `**user, demo, and admin**`
@@ -38,8 +38,9 @@ In this chapter, we will cover the following recipes:
     9. Now, click the Start attack button at the top right-hand side of the Options page. A pop-up attack results table appears, displaying the request with the payloads you defined placed into the payload marker positions. Notice the
     attack table produced shows an extra column entitled `**ReflectedXSSExecution**`. This column is a result of the **`Grep – Extract`** Option set previously.
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7f49e323-7383-4bc9-afc5-319a625656af/Untitled.png)
-    
+![image](https://user-images.githubusercontent.com/108616378/219856850-58e0954a-c99d-4ee9-8451-4952c3f451d2.png)
+
+
     1. From this attack table, viewing the additional column, a tester can easily identify which request number successfully brute-forced the login screen. In
     2. this case, Request 4, using credentials of the **`username admin`** and the
     `**password admin**` logged us into the application
@@ -63,8 +64,9 @@ In this chapter, we will cover the following recipes:
     13. Click the Go button to **send your modified GET request**. Remember, this is the first GET request you performed as **unauthenticated.**
     14. Verify that you are **now logged in as `admin**` in the **Response | Render tab**. We were able to **bypass the authentication mechanism** (that is, the log in page) by performing parameter manipulation:
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/27723877-f51f-4b80-ace7-e8ca452e792e/Untitled.png)
-    
+![image](https://user-images.githubusercontent.com/108616378/219856889-14529928-b00e-411f-ad12-bf1a46aec118.png)
+
+
 - **Testing for browser cache weaknesses**
     1. Log into the target application as `admin` with the password `admin`.
     2. Now log out of the application by clicking the Logout button from the top menu.
