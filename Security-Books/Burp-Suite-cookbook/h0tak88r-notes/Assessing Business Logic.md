@@ -22,12 +22,13 @@ In this chapter, we will cover the following recipes:
     5. Return to Firefox, and use the Browse button to find the **malicious_spreadsheet.xlsx file** on your system and click the Upload button:
     6. With the request paused in Burp's Proxy | Interceptor, change the `Contenttype from application/vnd.openxmlformatsofficedocument.spreadsheet.sheet` to `image/jpeg` instead. Here is the original: 
         
-        []()
-        
+                ![image](https://user-images.githubusercontent.com/108616378/219862574-74d1faef-0fd4-4b33-9125-30876acbb3af.png)
+
         Here is the modified version:
-        
-        []()
-        
+    
+            ![image](https://user-images.githubusercontent.com/108616378/219862818-8e6a8e0f-ff8a-4787-b89a-aa761f923c58.png)
+
+    
     7. Click the Forward button. Now turn Interceptor off by clicking the toggle button to Intercept is off.
     8. Note the file uploaded successfully! We were able to bypass the weak data validation checks and **upload a file** other than an **image**:
 - **Performing process-timing attacks**
@@ -49,7 +50,7 @@ In this chapter, we will cover the following recipes:
     Response received timing is 156, but the Response completed timing is
     10. However, the valid password of pentest (only 302) receives an immediate response: 50 (received), and 50 (completed):
     
-    []()
+    ![image](https://user-images.githubusercontent.com/108616378/219858492-cb603579-cb2d-4dfe-8250-93ad5801227a.png)
     
 - **Testing for the circumvention of workflows**
     
@@ -84,17 +85,16 @@ In this chapter, we will cover the following recipes:
     4. Click the Browse button to select the `xss.jpg` file:
     5. Switch to **Burp's Proxy | Options**. Make sure you are capturing Client responses and have the following settings enabled. This will allow us to **`capture HTTP responses modified** or **intercepted**`:
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/26b671f3-4069-424c-9343-4e39997f3841/Untitled.png)
-        
+![image](https://user-images.githubusercontent.com/108616378/219859717-bc4ff78c-3fbb-4a50-839f-826adf4820a5.png)
+    
     6. Switch to **Burp's Proxy | Intercept** tab. Turn Interceptor on with the button Intercept is on.
     7. Return to the Firefox browser, and click the **Start Upload button**. The message should be paused within Burp's Interceptor.
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b8e3c1d4-4c3b-4dd1-a78c-fda3e17d8d4d/Untitled.png)
-        
+![image](https://user-images.githubusercontent.com/108616378/219860061-06c7fe9d-cc1a-4baf-ae45-f4d97bb5694a.png)
+    
     8. Within the Intercept window while the request is paused, type Burp rocks into the search box at the bottom. You should see a match in the middle of the image. This is our polyglot payload. It is an image, but it contains a `hidden XSS script` within the comments of the image:
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/89a0ff73-6187-49fa-8e8b-61eaea264c07/Untitled.png)
-        
+![image](https://user-images.githubusercontent.com/108616378/219860334-c532502c-1f42-468a-b8ad-0d1581588c74.png)        
     9. Using Notepad or your favorite text editor, create a new file called `poly.jsp`, and write the following code within the file:
         
         ```jsx
@@ -106,9 +106,9 @@ In this chapter, we will cover the following recipes:
         ```
         
     10. Return to the **Malicious File Execution** page, and browse to the `poly.jsp` file you created, and then click the Start Upload button. The `poly.jsp` is a Java Server Pages file that is executable on this web server. Following the instructions, we must create a guest.txt file in the path provided. This code creates that file in `JSP` **scriptlet** tag code:
-        
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8a5e44be-b0d0-4e7d-9e31-5bbb0d81f136/Untitled.png)
-        
+            
+        ![image](https://user-images.githubusercontent.com/108616378/219861634-3fb9f45d-1e17-4e22-885a-a1f330dbdd56.png)
+         
     11. Right-click the unrecognized image, and select Copy Image Location.
     12. Open a new tab within the same Firefox browser as `WebGoat`, and paste the image location in the new tab. Press Enter to execute the script, and give the script a few seconds to run in the background before moving to the next step.
     13. Flip back to the first tab, F5, to refresh the page, and you should receive the successfully completed message. If your script is running slowly, try uploading the `poly.jsp` on the upload page again. The success message should appear:
