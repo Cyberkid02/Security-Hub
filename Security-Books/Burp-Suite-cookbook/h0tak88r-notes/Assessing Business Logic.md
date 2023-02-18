@@ -22,11 +22,11 @@ In this chapter, we will cover the following recipes:
     5. Return to Firefox, and use the Browse button to find the **malicious_spreadsheet.xlsx file** on your system and click the Upload button:
     6. With the request paused in Burp's Proxy | Interceptor, change the `Contenttype from application/vnd.openxmlformatsofficedocument.spreadsheet.sheet` to `image/jpeg` instead. Here is the original: 
         
-                ![image](https://user-images.githubusercontent.com/108616378/219862574-74d1faef-0fd4-4b33-9125-30876acbb3af.png)
+![image](https://user-images.githubusercontent.com/108616378/219862574-74d1faef-0fd4-4b33-9125-30876acbb3af.png)
 
         Here is the modified version:
     
-            ![image](https://user-images.githubusercontent.com/108616378/219862818-8e6a8e0f-ff8a-4787-b89a-aa761f923c58.png)
+![image](https://user-images.githubusercontent.com/108616378/219862818-8e6a8e0f-ff8a-4787-b89a-aa761f923c58.png)
 
     
     7. Click the Forward button. Now turn Interceptor off by clicking the toggle button to Intercept is off.
