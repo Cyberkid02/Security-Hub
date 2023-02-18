@@ -1,3 +1,45 @@
+
+Burp version to 1.7.36 or higher.
+Blugins 
+Software Vulnerability Scanner found numerous CVE issues, and Retire.js identified five instances of a vulnerable version of jQuery
+active scan ++
+JSON Beautifier and JSON Web Tokens:
+Java Serial Killer
+What this book covers
+Chapter 1, Getting Started with Burp Suite, provides setup instructions necessary
+to proceed through the material of the book.
+Chapter 2, Getting to Know the Burp Suite of Tools, begins with establishing the
+Target scope and provides overviews to the most commonly used tools within
+Burp Suite.
+Chapter 3, Configuring, Spidering, Scanning, and Reporting with Burp, helps
+testers to calibrate Burp settings to be less abusive towards the target application.
+Chapter 4, Assessing Authentication Schemes, covers the basics of
+Authentication, including an explanation that this is the act of verifying a person
+or object claim is true.
+Chapter 5, Assessing Authorization Checks, helps you understand the basics of
+Authorization, including an explanation that this how an application uses roles to
+determine user functions.
+Chapter 6, Assessing Session Management Mechanisms, dives into the basics of
+Session Management, including an explanation that this how an application
+keeps track of user activity on a website.
+Chapter 7, Assessing Business Logic, covers the basics of Business Logic
+Testing, including an explanation of some of the more common tests performed
+in this area.
+Chapter 8, Evaluating Input Validation Checks, delves into the basics of Data
+Validation Testing, including an explanation of some of the more common tests
+performed in this area.
+Chapter 9, Attacking the Client, helps you understand how Client-Side testing is
+concerned with the execution of code on the client, typically natively within a
+web browser or browser plugin. Learn how to use Burp to test the execution of
+code on the client-side to determine the presence of Cross-site Scripting (XSS).
+Chapter 10, Working with Burp Macros and Extensions, teaches you how Burp
+macros enable penetration testers to automate events such as logins or response
+parameter reads to overcome potential error situations. We will also learn about
+Extensions as an additional functionality to Burp.
+Chapter 11, Implementing Advanced Topic Attacks, provides a brief explanation
+of XXE as a vulnerability class targeting applications which parse XML and
+SSRF as a vulnerability class allowing an attacker to force applications to make
+unauthorized requests on the attacker’s behalf.
 # CH1: Getting Started with Burp Suite
 
 - Introduction
