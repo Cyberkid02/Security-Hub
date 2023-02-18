@@ -89,24 +89,3 @@ for all protocols checkbox:
 3. Make sure the No proxy for the textbox is blank, as shown in the following
 screenshot, and then click OK:
 4. Or Use `Foxyproxy` extension
-
-# CH2:Getting to Know the Burp Suite of Tools
-
-In this chapter, we will cover the following recipes:
-Setting the Target Site Map
-
-- Understanding Message Editor
-- Repeating with Repeater
-- Decoding with Decoder
-- Intruding with Intruder
-
-# CH3:Configuring, Spidering, Scanning, and Reporting
-
-In this chapter, we will cover the following recipes:
-Establishing trust over HTTPS
-
-- Setting project options
-- Setting user options
-- Spidering with Spider
-- Scanning with Scanner
-- Reporting issues
