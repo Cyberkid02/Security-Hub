@@ -38,8 +38,7 @@ In this chapter, we will cover the following recipes:
     9. Now, click the Start attack button at the top right-hand side of the Options page. A pop-up attack results table appears, displaying the request with the payloads you defined placed into the payload marker positions. Notice the
     attack table produced shows an extra column entitled `**ReflectedXSSExecution**`. This column is a result of the **`Grep – Extract`** Option set previously.
     
-![image](https://user-images.githubusercontent.com/108616378/219856850-58e0954a-c99d-4ee9-8451-4952c3f451d2.png)
-
+![image](https://user-images.githubusercontent.com/108616378/219856941-f12f34ec-8a71-40c4-a947-6782d872f6a7.png)
 
     1. From this attack table, viewing the additional column, a tester can easily identify which request number successfully brute-forced the login screen. In
     2. this case, Request 4, using credentials of the **`username admin`** and the
