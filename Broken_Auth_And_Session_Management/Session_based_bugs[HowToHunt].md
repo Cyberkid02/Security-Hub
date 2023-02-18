@@ -74,31 +74,6 @@ Email Verfication was bypassed due to Broken Authentication Mechanism , Thus mor
 ```
 `Impact` : Email Verfication Bypass
 
- ### Old Password Reset Token Not Expiring Upon Requesting New One (Sometimes P4) :
-  * Steps :
- ``` 
-    1)First You need to Create an account with a Valid Email Address.
-    2)After Creating An Account log out from your Account and Navigate on Forgot Password Page.
-    3)Request a Password Reset Link for your Account.A Verification Link will be sent to your account.
-    4)Without Using this Password Reset Link Request A New Password Reset Link.
-    5)Now go in Your email and Use 1st Password Reset Link Rather than Using 2nd One And Change Your Password.
-    6) If You Are Able to Change Your Password Than This Is a tiny Bug ;).
-```
-* Note:- Some Companies Won't Accept it As Valid Issue. 
-
-### Password Reset Token Not Expiring After Password Change (P4):
-  * Steps :
- ``` 
-    1)First You need to Create an account with a Valid Email Address.
-    2)After Creating An Account log out from your Account and Navigate on Forgot Password Page.
-    3)Request a Password Reset Link for your Account.
-    4)Use The Password Reset Link And Change The Password, After Changing the Password Login to Your Account.
-    5)Now Use The Old Password Reset Link To Change The Password Again.
-    6) If You Are Able to Change Your Password Again Than This Is a tiny Bug  ;).
-```
-
-* Thanks For Reading Guys Happy Hunting :).
-
   ## Resources:
   Google,Youtube.
 
