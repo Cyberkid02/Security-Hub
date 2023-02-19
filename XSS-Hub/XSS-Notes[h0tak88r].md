@@ -35,12 +35,12 @@
 - **XSS Reflected in JSON Format and “{}” Forbidden**
     - [ ]  `/?q=test%2Aconsole.log(1337)//’;`
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/79122539-c39c-4470-8cf3-d64c90b9eb83/Untitled.png)
+   ![image](https://user-images.githubusercontent.com/108616378/219940132-46f7abe3-2ac4-425d-aa29-09e54d2c62b4.png)
     
 - **XSS Reflected in `<link>` OR `<input type=hidden>` attribute when add param**
     - [ ]  `/?lol=h0tak88r’accesskey=’x’onclick=’alert(0)’` But the Victim must click `ALT+SHIFT+X`
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bfa2cede-adb8-42af-8323-f7f92fac3192/Untitled.png)
+   ![image](https://user-images.githubusercontent.com/108616378/219940162-49b746e2-b5a2-46ff-bcd2-0d2755a131a8.png)
     
 - **XSS in email section**
     
@@ -51,7 +51,7 @@
 - **XSS for .JSON endpoint [ bypass (`.html`)and `WAF` ]**
     - [ ]  `“resource Type” : “silent:nonexitsting”` Function
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8b65eb11-ffe7-46d3-ab2f-53ef70f025bf/Untitled.png)
+        ![image](https://user-images.githubusercontent.com/108616378/219940178-c7988e77-c51a-4e79-add2-e0b192d92e02.png)
         
     - [ ]  Use `url-encoded` payload with .`htm` extension and `//`   for break directory block too , So the server so the server didn’t understand my request fully
     - [ ]  POC
