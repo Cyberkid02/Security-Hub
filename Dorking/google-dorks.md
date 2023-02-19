@@ -1,6 +1,8 @@
 # Google dorks helper
 https://dorks.faisalahmed.me/
 
+# Find Bug Bounty programs
+"submit vulnerability report" | "powered by bugcrowd" | "powered by hackerone" -inurl:news -site:*.de
 # Code share sites
 site:http://ideone.com | site:http://codebeautify.org | site:http://codeshare.io | site:http://codepen.io | site:http://repl.it | site:http://jsfiddle.net "company"
 # GitLab/GitHub/Bitbucket
