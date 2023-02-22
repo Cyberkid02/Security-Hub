@@ -31,7 +31,8 @@ The world and its devices are quickly becoming more connected through the shiny 
 
 
 ---
-
+great list :
+https://www.osintme.com/index.php/2021/01/16/ultimate-osint-with-shodan-100-great-shodan-queries/
 
 ## Industrial Control Systems
 
