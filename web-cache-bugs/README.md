@@ -17,7 +17,7 @@ To perform a cache poisoning attack, you need first to **identify unkeyed inputs
 
 ### Discovery: Check HTTP headers
 
-Usually, when a response was **stored in the cache** there will be a **header indicating so**, you can check which headers you should pay attention to in this post: [**HTTP Cache headers**](../network-services-pentesting/pentesting-web/special-http-headers.md#cache-headers).
+Usually, when a response was **stored in the cache** there will be a **header indicating so**, you can check which headers you should pay attention to in this post: [**HTTP Cache headers**](https://github.com/carlospolop/hacktricks/blob/master/network-services-pentesting/pentesting-web/special-http-headers.md#cache-headers).
 
 ### Discovery: Caching 400 code
 
