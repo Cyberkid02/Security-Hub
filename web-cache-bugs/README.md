@@ -112,8 +112,6 @@ Example usage: `wcvs -u example.com`
 Use [**Trickest**](https://trickest.io/) to easily build and **automate workflows** powered by the world's **most advanced** community tools.\
 Get Access Today:
 
-{% embed url="https://trickest.com/?utm_campaign=hacktrics&utm_medium=banner&utm_source=hacktricks" %}
-
 ## Vulnerable Examples
 
 ### Apache Traffic Server ([CVE-2021-27577](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27577))
@@ -132,21 +130,21 @@ GitLab uses GCP buckets to store static content. **GCP Buckets** support the **h
 
 Ruby on Rails application is often deployed alongside the Rack middleware. The Rack code below takes the value of the **`x-forwarded-scheme` value and uses it as the scheme of the request**.
 
-![](<../.gitbook/assets/image (159) (2).png>)
+![image](https://user-images.githubusercontent.com/108616378/221684180-537d03b9-0592-4aa7-9a04-849e39594507.png)
 
 Sending the `x-forwarded-scheme: http` header would result in a 301 redirect to the same location which will cause a DoS over that resource as in this example:
 
-![](<../.gitbook/assets/image (166).png>)
+![image](https://user-images.githubusercontent.com/108616378/221685734-5aa0bf79-5b62-4988-adc7-fa478067ab4f.png)
 
 The application might also support the header `X-forwarded-host` and redirect the user to that host, making it possible to load javascript files from the attacker server:
 
-![](<../.gitbook/assets/image (157) (2).png>)
+![image](https://user-images.githubusercontent.com/108616378/221685862-17d677eb-8afa-46bd-b6f3-8a432bc4f8ab.png)
 
 ### 403 and Storage Buckets
 
 Previously, **Cloudflare** used to **cache** the **403 responses**, therefore sending **bad Authorization** headers trying to access **S3** or **Azure Storage Blobs** exposed will return a 403 that will be cached. Cloudflare no longer caches 403 responses but this might work with other proxies.
 
-![](<../.gitbook/assets/image (171).png>)
+![image](https://user-images.githubusercontent.com/108616378/221685896-9a3d06aa-abe3-4481-a88e-577c8e43f86a.png)
 
 ### Injecting Keyed Parameters
 
@@ -154,7 +152,7 @@ Quite often, caches are configured to **only include specific GET parameters in 
 
 For example, Fastly using Varnish **cached the `size` parameter** in the request but if you sent **also** the **`siz%65`** parameter with a bad value, the **cache key** was constructed with the **well written size param**, but the **backend** used the **value inside the URL encoded param**.
 
-![](<../.gitbook/assets/image (180).png>)
+![image](https://user-images.githubusercontent.com/108616378/221685944-fe8936c2-cc93-46e5-b34f-8798c983b968.png)
 
 URL encoding the second `size` parameter caused it to be ignored by the cache, but used by the backend. Giving the parameter a value of 0 would result in a cacheable 400 Bad Request.
 
@@ -162,7 +160,7 @@ URL encoding the second `size` parameter caused it to be ignored by the cache, b
 
 Due to the high amount of traffic tools like FFUF or Nuclei generate, some developers decided to block requests matching their user-agents. Ironically, these tweaks can introduce unwanted cache poisoning and DoS opportunities.
 
-![](<../.gitbook/assets/image (167) (2).png>)
+![image](https://user-images.githubusercontent.com/108616378/221686001-41556181-20d8-4041-afc4-cbaf997fa98f.png)
 
 I found this worked on multiple targets, with user-agents from different tools or scanners.
 
@@ -170,11 +168,11 @@ I found this worked on multiple targets, with user-agents from different tools o
 
 The header name format is defined in [RFC7230](https://datatracker.ietf.mrg/doc/html/rfc7230) as follows:
 
-![](<../.gitbook/assets/image (175) (2).png>)
+![image](https://user-images.githubusercontent.com/108616378/221686022-bca6cb20-76ee-4da3-ba98-1f8e3f4351dd.png)
 
 In theory, if a header name contains characters other than the ones listed in **tchar** it should be rejected with a 400 Bad request. In practice, however, servers don't always respect the RFC. The easiest way to exploit this nuance was by targeting Akamai which doesn't reject invalid headers, but forwards them and caches any 400 error as long the cache-control header is not present.
 
-![](<../.gitbook/assets/image (163).png>)
+![image](https://user-images.githubusercontent.com/108616378/221686057-0fd8277f-e920-4756-8b16-46edf9ab75a9.png)
 
 Sending a header containing an illegal character, `\` would cause a cacheable 400 Bad Request error. This was one of the most commonly identified patterns throughout my testing.
 
@@ -202,7 +200,7 @@ Then, the **attacker** can access _http://www.example.com/home.php_ and see the 
 
 Note that the **cache proxy** should be **configured** to **cache** files **based** on the **extension** of the file (_.css_) and not base on the content-type. In the example _http://www.example.com/home.php/non-existent.css_ will have a `text/html` content-type instead of a `text/css` mime type (which is the expected for a _.css_ file).
 
-Learn here about how to perform[ Cache Deceptions attacks abusing HTTP Request Smuggling](http-request-smuggling/#using-http-request-smuggling-to-perform-web-cache-deception).
+Learn here about how to perform[ Cache Deceptions attacks abusing HTTP Request Smuggling](https://github.com/carlospolop/hacktricks/blob/master/pentesting-web/http-request-smuggling/#using-http-request-smuggling-to-perform-web-cache-deception).
 
 ## References
 
