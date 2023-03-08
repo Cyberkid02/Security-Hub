@@ -1,4 +1,6 @@
 # Collection of Nuclei Template [ By:emadshanab ]
+https://github.com/ayadim/Nuclei-bug-hunter
+
 https://github.com/pikpikcu/nuclei-templates
 
 https://github.com/esetal/nuclei-bb-templates
